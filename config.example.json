@@ -1,0 +1,81 @@
+{
+  "_readme": "把 ACCOUNT / PASSWORD / COURSE_ID 换成自己的值即可。PASSWORD 可以留空占位，改成用环境变量 CX_PWD 传入。",
+  "ACCOUNT": "YOUR_ACCOUNT",
+  "PASSWORD": "",
+  "USE_ENV_PASSWORD": true,
+  "COURSE_ID": "YOUR_COURSE_ID",
+  "MODE": "jump",
+  "RATE": 16.0,
+  "REUSE_SESSION": true,
+  "STORAGE_STATE": "evidence\\storage_state.json",
+  "INCLUDE_CHILD_NODES": true,
+  "CASCADE_CHILD_NODES": false,
+  "CASCADE_LIMIT": 40,
+  "BROWSER_PATH": "",
+  "DO_VIDEO": true,
+  "DO_QUIZ": true,
+  "QUIZ_SUBMIT": true,
+  "MAX_CHAPTERS": 0,
+  "SLEEP_BETWEEN_CHAPTERS": [
+    60,
+    150
+  ],
+  "HEADLESS": true,
+  "OCR": {
+    "enabled": true,
+    "crop_top_ratio": 0.02,
+    "crop_height_ratio": 0.5,
+    "min_ocr_chars": 10
+  },
+  "AI_ANSWER": {
+    "openai_base": "",
+    "model": "",
+    "env_key": "DEEPSEEK_API_KEY"
+  },
+  "ANSWER_APIS": [
+    {
+      "name": "local",
+      "transport": "get",
+      "url": "http://localhost:8000/api/answer",
+      "params": {
+        "q": "{question}",
+        "type": "{type}"
+      },
+      "paths": [
+        "data.answer",
+        "answer"
+      ]
+    }
+  ],
+  "BANK_FILES": [
+    "evidence\\bank.json",
+    "answer_bank.json"
+  ],
+  "BANK_SQL": "evidence\\bank.sqlite3",
+  "CACHE_PATH": "evidence\\bank.json",
+  "LOCAL_DB": "evidence\\tiku.db",
+  "QUIZ_SELECTORS": {
+    "question": ".TiMu, .questionLi, .TiMuWrap",
+    "type": "[class*=TiMuType], .newZy_TItle, .Zy_TItle",
+    "title": "[class*=Zy_TItleHover], .Zy_TItle, .TiMu .clearfix",
+    "options": "[class*=Zy_ulTop] li, .answerList li, ul li[data-value]",
+    "option_label": ".num_option, .num_option_dx, b",
+    "inputs": "input[type=text], input[type=number], textarea",
+    "submit": "#submitBtn, .BtnSubmit, a:has-text('提交'), button:has-text('提交'), a:has-text('交卷')",
+    "confirm": ".layui-layer-btn a:has-text('确定'), a:has-text('确定'):visible, a:has-text('确认')"
+  },
+  "CLAZZID": "155131839",
+  "CPI": "577718561",
+  "VIDEO_MAX_RATE": 2.0,
+  "VIDEO_MAX_WAIT": 3600,
+  "VIDEO_ECHO_WAIT": 60,
+  "CASCADE_QUIZ": true,
+  "AUTO_RELOGIN": true,
+  "RELOGIN_COOLDOWN_S": 900,
+  "DAILY_TASK_CAP": 600,
+  "BREAK_EVERY_N_CHAPTERS": 12,
+  "SKIP_FINISHED": true,
+  "CHILDREN_FIRST": true,
+  "MAX_NODE_TRIES": 3,
+  "SWEEP_MAX_MINUTES": 25
+}

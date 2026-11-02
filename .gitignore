@@ -1,0 +1,24 @@
+# local environment / runtime artifacts
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# everything account-specific stays local
+config.json
+evidence/
+logs/
+*.log
+HANDOFF.md
+STATUS.md
+*.sqlite3
+*.db
+
+# screenshots / captures produced while debugging
+*.png
+*.jpg
+*.har
+
+# OS noise
+Thumbs.db
+desktop.ini
